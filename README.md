@@ -47,21 +47,18 @@ This project went through several iterations to achieve a stable and efficient s
 
 ### 🌟 Future Directions
 
-* **Pre-sharded Dataset**: To eliminate the CPU bottleneck entirely, the next step would be to pre-process and shard the dataset into a format like **WebDataset** or Parquet files.
 * **Direct Preference Optimization (DPO)**: Implement DPO or similar alignment techniques to fine-tune the trained model based on human preferences for aesthetics or prompt faithfulness.
 * **Adaptation for SDXL**: Upgrade the script to support training more complex architectures like **Stable Diffusion XL**, which involves handling two text encoders and a more sophisticated UNet.
-* **Automated Hyperparameter Tuning**: Integrate tools like **Optuna** or **Ray Tune** to automatically search for the optimal set of hyperparameters.
 * **Full Inference Pipeline**: Add a dedicated script that loads the final trained components into a standard `diffusers.StableDiffusionPipeline` for easy image generation.
 
 ---
 
 ## 🚀 Getting Started
 
-1.  **Clone the repository and install dependencies.**
+1.  **Clone the repository.**
     ```bash
     git clone [https://github.com/your-username/T2I-LDM-model-training.git](https://github.com/your-username/T2I-LDM-model-training.git)
     cd T2I-LDM-model-training
-    pip install -r requirements.txt
     ```
 
 2.  **Configure `accelerate`.**
@@ -71,10 +68,10 @@ This project went through several iterations to achieve a stable and efficient s
     Set up your training environment (single GPU, multi-GPU, etc.).
 
 3.  **Customize the Script.**
-    Open `your_training_script.py` and adjust the configuration variables at the top to set your desired hyperparameters, model IDs, dataset, and output paths.
+    Open `Train_LDM.py` and adjust the configuration variables at the top to set your desired hyperparameters, model IDs, dataset, and output paths.
 
 4.  **Launch Training.**
     ```bash
-    accelerate launch your_training_script.py
+    accelerate launch Train_LDM.py
     ```
     The script will handle the rest, from downloading models and streaming data to logging progress and saving checkpoints.
